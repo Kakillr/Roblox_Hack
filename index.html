@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
-
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,22 +14,6 @@
             margin: 0;
             animation: fadeIn 2s ease-out;
         }
-
-        /* تهيئة لزر الليل والنهار */
-        #sunMoonContainer {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            z-index: 10;
-        }
-
-        #sunMoonIcon {
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-        }
-
-        /* باقي التنسيق الخاص بالموقع */
         .container {
             background-color: #333;
             padding: 30px;
@@ -40,24 +23,17 @@
             border-radius: 15px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.7);
         }
-
         h1 {
             font-size: 60px;
             margin-bottom: 30px;
-            animation: typing 3s steps(20, end);
-            overflow: hidden;
-            white-space: nowrap;
-            border-right: 3px solid white;
         }
-
         .description {
             font-size: 18px;
             margin-bottom: 30px;
             color: #ccc;
         }
-
         .download-btn {
-            background: linear-gradient(45deg, red, darkred);
+            background-color: red;
             color: white;
             padding: 15px 30px;
             font-size: 20px;
@@ -67,194 +43,104 @@
             box-shadow: 0px 4px 10px rgba(255, 0, 0, 0.5);
             margin-bottom: 20px;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
+            display: inline-block;
         }
-
         .download-btn:hover {
-            background: linear-gradient(45deg, darkred, black);
+            background-color: darkred;
             box-shadow: 0px 6px 15px rgba(255, 0, 0, 0.7);
         }
-
         .download-btn:active {
-            transform: scale(1.1);
+            transform: scale(0.95);
         }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        .social-container {
+            display: flex;
+            justify-content: center;
             gap: 15px;
-            padding: 20px;
+            margin-top: 10px;
         }
-
-        .feature-card {
+        .social-btn {
             background-color: #444;
-            padding: 20px;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-decoration: none;
             border-radius: 10px;
-            text-align: center;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.3s;
+            width: 180px;
+            justify-content: center;
         }
-
-        .feature-card h3 {
-            margin: 10px 0;
-            font-size: 18px;
+        .social-btn:hover {
+            background-color: #555;
         }
-
-        .feature-card p {
-            font-size: 14px;
-            color: #bbb;
+        .social-btn img {
+            width: 20px;
+            height: 20px;
         }
-
-        .feature-card img {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 10px;
-        }
-
-        /* شريط الأخبار المتحرك */
-        .news-ticker {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
-            color: #fff;
-            padding: 10px;
-            font-size: 18px;
-            overflow: hidden;
-            white-space: nowrap;
-            animation: marquee 10s linear infinite;
-        }
-
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* نافذة الدردشة */
-        .chat-window {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #444;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
-            width: 250px;
-            text-align: left;
+        #download-msg {
             display: none;
-        }
-
-        .chat-window h3 {
-            font-size: 18px;
             color: white;
-        }
-
-        .chat-window p {
-            font-size: 14px;
-            color: #bbb;
-        }
-
-        .chat-toggle {
-            background: #444;
-            color: white;
+            background: #222;
             padding: 10px;
-            border-radius: 25px;
-            cursor: pointer;
-        }
-
-        .chat-toggle:hover {
-            background: #555;
+            border-radius: 5px;
+            margin-top: 10px;
         }
     </style>
 </head>
-
 <body>
-    <div class="news-ticker">🚨 النسخة الجديدة 2.0 وصلت! قم بتحميلها الآن!</div>
-
     <div class="container">
         <h1>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</h1>
         <div class="description">
-            Delta & Codex Executor هما من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!
+            Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!
         </div>
-        <div class="download-btn" id="deltaInstallBtn">Delta Install</div>
-        <div class="download-btn" id="codexInstallBtn">CODEX Install</div>
-
-        <section class="content-section">
-            <h2>Why Choose Delta & Codex iOS?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3281/3281318.png" alt="Security">
-                    <h3>Secure Installation</h3>
-                    <p>Advanced encryption and security measures ensure safe app installation.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3523/3523063.png" alt="Updates">
-                    <h3>Regular Updates</h3>
-                    <p>Stay current with automatic updates and continuous improvements.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png" alt="Compatibility">
-                    <h3>Wide Compatibility</h3>
-                    <p>Support for various iOS versions and devices.</p>
-                </div>
-                <div class="feature-card">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2168/2168336.png" alt="Speed">
-                    <h3>Fast Download Speeds</h3>
-                    <p>Optimized servers ensure quick and reliable downloads.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-content">
-                <div class="faq-item">
-                    <div class="faq-question">Is Delta & Codex iOS safe to use?</div>
-                    <div class="faq-answer">Yes, Delta & Codex iOS prioritize user security and privacy. All apps are thoroughly scanned and verified before being made available for installation.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Which iOS versions are supported?</div>
-                    <div class="faq-answer">Delta & Codex iOS support iOS 12.0 and above, ensuring compatibility with a wide range of devices and system versions.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">How often is the app updated?</div>
-                    <div class="faq-answer">We regularly update our app to ensure you have access to the latest versions and features.</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- زر يوتيوب وتلجرام -->
-        <div class="social-links">
-            <a href="https://www.youtube.com/@Ka_KILLR" target="_blank" class="download-btn">YouTube</a>
-            <a href="https://t.me/KA_KILLR" target="_blank" class="download-btn">Telegram</a>
+        <div class="download-btn" id="deltaInstallBtn">⬇️ Delta Install</div>
+        <div class="download-btn" id="codexInstallBtn">⬇️ CODEX Install</div>
+        <div id="download-msg">إذا لم يبدأ التحميل، يرجى فتح الرابط في Safari.</div>
+        <div class="social-container">
+            <a class="social-btn" href="https://www.youtube.com/@Ka_KILLR" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/YouTube_social_white_square_%282017%29.svg/1024px-YouTube_social_white_square_%282017%29.svg.png" alt="YouTube">
+                يوتيوب
+            </a>
+            <a class="social-btn" href="https://t.me/KA_KILLR" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+                تيليجرام
+            </a>
         </div>
     </div>
-
-    <!-- نافذة الدردشة -->
-    <div class="chat-toggle" onclick="toggleChat()">Chat with us</div>
-    <div class="chat-window">
-        <h3>Support Chat</h3>
-        <p>How can we assist you today?</p>
-    </div>
-
-    <!-- زر الليل والنهار -->
-    <div id="sunMoonContainer">
-        <img id="sunMoonIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Sun_and_moon_icon.svg/1200px-Sun_and_moon_icon.svg.png" alt="Sun/Moon" onclick="toggleDayNight()">
-    </div>
-
+    <section class="content-section">
+        <h2>Why Choose Delta iOS?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Secure Installation</h3>
+                <p>Our platform uses advanced encryption and security measures to ensure safe app installation every time.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Regular Updates</h3>
+                <p>Stay current with automatic updates and continuous improvements to your favorite apps.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Wide Compatibility</h3>
+                <p>Support for various iOS versions and devices, ensuring broad accessibility.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Fast Download Speeds</h3>
+                <p>Optimized servers ensure quick and reliable downloads for all users.</p>
+            </div>
+        </div>
+    </section>
     <script>
-        function toggleChat() {
-            const chatWindow = document.querySelector('.chat-window');
-            chatWindow.style.display = chatWindow.style.display === 'block' ? 'none' : 'block';
+        function installApp(url) {
+            document.getElementById("download-msg").style.display = "block";
+            setTimeout(() => { window.location.href = url; }, 2000);
         }
-
-        function toggleDayNight() {
-            const body = document.querySelector('body');
-            const currentClass = body.classList.contains('night') ? 'day' : 'night';
-            body.classList.remove('
+        document.getElementById('deltaInstallBtn').addEventListener('click', function() {
+            installApp("itms-services://?action=download-manifest&url=https://deltaios-executor.com/Install.plist");
+        });
+        document.getElementById('codexInstallBtn').addEventListener('click', function() {
+            installApp("itms-services://?action=download-manifest&url=https://codex-ios.com/Install.plist");
+        });
+    </script>
+</body>
+</html>
