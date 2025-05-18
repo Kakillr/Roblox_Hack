@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>KILLRS-Scripts</title>
-
   <style>
     @font-face {
       font-family: 'VIP Hala';
@@ -38,6 +37,11 @@
       z-index: 10;
     }
 
+    .title-text {
+      font-size: 2rem;
+      color: #333;
+    }
+
     .lang-btn, .os-btn {
       font-size: 1.5rem;
       padding: 15px 50px;
@@ -57,8 +61,8 @@
 
     #os-select {
       display: none;
-      flex-direction: row;
-      gap: 40px;
+      flex-direction: column;
+      align-items: center;
     }
 
     #main-site {
@@ -133,13 +137,15 @@
       padding: 12px 30px;
       border-radius: 12px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background-color: #fff;
+      color: #000;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.2);
     }
 
     .telegram-button:hover {
       transform: scale(1.05);
     }
 
-    /* Android Dark Theme */
     .dark-theme {
       background: #111;
       color: #fff;
@@ -153,30 +159,17 @@
       color: #ddd;
     }
 
-    .dark-theme .telegram-button {
-      background-color: #fff;
-      color: #000;
-      box-shadow: 0 4px 10px rgba(255,255,255,0.2);
-    }
-
-    /* iPhone Light Theme */
     .light-theme {
-      background: linear-gradient(135deg, #f0f3f7, #d9e2ec);
-      color: #222;
+      background: #111;
+      color: #fff;
     }
 
     .light-theme #site-name {
-      color: #764ba2;
+      color: #fff;
     }
 
     .light-theme #footer-text {
-      color: #444;
-    }
-
-    .light-theme .telegram-button {
-      background-color: #000;
-      color: #fff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: #ddd;
     }
   </style>
 </head>
@@ -184,15 +177,16 @@
 
   <!-- اختيار اللغة -->
   <div class="center-screen" id="language-select">
-    <h2> Choose | اختار </h2>
+    <div class="title-text">Choose | اختار</div>
     <button class="lang-btn" data-lang="en">English</button>
     <button class="lang-btn" data-lang="ar">عربي</button>
   </div>
 
   <!-- اختيار النظام -->
   <div class="center-screen" id="os-select">
-    <button class="os-btn" data-os="android">Android</button>
-    <button class="os-btn" data-os="iphone">iPhone</button>
+    <div class="title-text">Choose | اختار</div>
+    <button class="os-btn" data-os="android">📱 Android</button>
+    <button class="os-btn" data-os="iphone">🍏 iPhone</button>
   </div>
 
   <!-- الواجهة الرئيسية -->
@@ -240,9 +234,8 @@
     document.querySelectorAll('.os-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const os = btn.getAttribute('data-os');
-        const theme = os === 'android' ? 'dark-theme' : 'light-theme';
+        document.body.className = 'dark-theme'; // توحيد الثيم للجميع
 
-        document.body.className = theme;
         document.getElementById('os-select').style.display = 'none';
         document.getElementById('main-site').style.display = 'flex';
 
