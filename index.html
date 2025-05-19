@@ -22,18 +22,21 @@
     }
 
     html, body {
+      overflow-x: hidden;
+      overflow-y: auto;
       height: 100%;
       background: #f5f7fa;
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
       user-select: none;
-      color: #000;
+      color: #000000;
+      padding: 10px; /* مساحة صغيرة حول المحتوى */
     }
 
+    /* تعديل #language-select ليكون وسط الشاشة بشكل دائم */
     #language-select {
-      position: absolute;
+      position: fixed; /* ثابت عشان دايمًا في وسط الشاشة */
       inset: 0;
       background: #ffffffee;
       display: flex;
@@ -42,6 +45,15 @@
       align-items: center;
       gap: 30px;
       z-index: 10;
+      padding: 10px;
+    }
+
+    #buttons-row {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
     }
 
     #language-select h2 {
@@ -57,8 +69,10 @@
       cursor: pointer;
       transition: all 0.3s ease;
       box-shadow: 0 4px 10px rgb(0 0 0 / 0.1);
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: #111111;  /* أسود غامق */
       color: white;
+      white-space: nowrap;
+      min-width: 120px;
     }
 
     .lang-btn:hover {
@@ -75,22 +89,25 @@
       width: 100vw;
       height: 100vh;
       padding: 20px;
-      background: linear-gradient(135deg, #f0f3f7, #d9e2ec);
+      background: #000000; /* خلفية سوداء صلبة */
+      color: #ffffff; /* نص أبيض */
+      overflow-y: auto;
+      box-sizing: border-box;
     }
 
     #site-name {
       font-size: 3rem;
       font-weight: 900;
-      color: #764ba2;
-      text-shadow: 2px 2px 8px rgba(118, 75, 162, 0.7);
+      color: rgba(255, 255, 255, 0.9); /* لون حليبي */
+      text-shadow: 2px 2px 8px rgba(255, 255, 255, 0.4); /* لمعان خفيف */
       margin-bottom: 30px;
       text-align: center;
+      padding: 0 10px;
     }
 
     .card {
-      background: #fff;
+      background: linear-gradient(135deg, #2f2f2f, #1e1e1e);
       border-radius: 25px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
@@ -98,14 +115,62 @@
       gap: 20px;
       max-width: 600px;
       width: 100%;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      padding: 30px 20px;
+      color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+
+      background-image: 
+        linear-gradient(135deg, #2f2f2f, #1e1e1e),
+        repeating-linear-gradient(
+          135deg,
+          rgba(200, 200, 200, 0.05),
+          rgba(200, 200, 200, 0.05) 2px,
+          transparent 2px,
+          transparent 8px
+        );
+      background-size: 100% 100%, 40px 40px;
+      animation: moveLines 5s linear infinite;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05),
+        rgba(255, 255, 255, 0)
+      );
+      pointer-events: none;
+      z-index: 1;
+      border-radius: 25px;
+    }
+
+    @keyframes moveLines {
+      0% {
+        background-position: 0 0, 0 0;
+      }
+      100% {
+        background-position: 0 0, 40px 40px;
+      }
     }
 
     #buttons-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
       gap: 30px 40px;
-      width: 440px; /* 200 + 200 + 40 (المسافة بين الأزرار) */
+      padding: 30px;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 440px;
       direction: rtl;
+      border-radius: 15px;
     }
 
     button.action-btn {
@@ -118,9 +183,10 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       position: relative;
       white-space: nowrap;
+      text-align: center;
     }
 
- button.action-btn:nth-child(1) {
+    button.action-btn:nth-child(1) {
       background: linear-gradient(45deg, #667eea, #764ba2);
       box-shadow: 0 4px 15px rgb(102 126 234 / 0.7);
     }
@@ -156,7 +222,7 @@
       box-shadow: 0 10px 30px rgb(255 118 118 / 0.9);
     }
 
-    .telegram-button {
+       .telegram-button {
       margin-top: 15px;
       background-color: #000;
       color: #fff;
@@ -166,41 +232,46 @@
       border-radius: 12px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-align: center;
+      display: inline-block;
+      min-width: 180px;
     }
-
     .telegram-button:hover {
       transform: scale(1.05);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
-    #footer-text {
-      margin-top: 25px;
-      font-size: 1rem;
-      color: #444;
-      text-align: center;
-      max-width: 700px;
-      font-weight: 500;
-      line-height: 1.5;
-      padding: 0 10px;
-    }
-
-    @media (max-width: 480px) {
-      #site-name {
-        font-size: 2.2rem;
-      }
-
-      .lang-btn {
-        font-size: 1.2rem;
-        padding: 10px 30px;
-      }
-
-      .card {
+    /* تهيئة الموبايل */
+    @media (max-width: 600px) {
+      #language-select {
         padding: 20px;
+        gap: 20px;
       }
-
-      .telegram-button {
+      #buttons-row {
+        flex-direction: column;
+        gap: 15px;
         width: 100%;
-        text-align: center;
+      }
+      .lang-btn {
+        width: 100%;
+        padding: 15px 0;
+        font-size: 1.3rem;
+        min-width: auto;
+      }
+      #main-site {
+        padding: 10px;
+      }
+      #site-name {
+        font-size: 2rem;
+      }
+      #buttons-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px 10px;
+        max-width: 100%;
+      }
+      button.action-btn {
+        font-size: 1rem;
+        padding: 10px 5px;
       }
     }
   </style>
@@ -209,73 +280,73 @@
 
   <!-- اختيار اللغة -->
   <div id="language-select">
-    <h2> Choose | اختار </h2>
-    <button class="lang-btn" data-lang="en">English</button>
-    <button class="lang-btn" data-lang="ar">عربي</button>
+    <h2>اختر اللغة</h2>
+    <div id="buttons-row">
+      <button class="lang-btn" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="fr">Français</button>
+      <button class="lang-btn" data-lang="tr">Türkçe</button>
+    </div>
   </div>
 
-  <!-- الصفحة الرئيسية -->
-  <div id="main-site">
-    <div id="site-name">GHOST_KILLR</div>
-
+  <!-- المحتوى الرئيسي -->
+  <main id="main-site">
+    <h1 id="site-name">KILLRS-Scripts</h1>
     <div class="card">
       <div id="buttons-container">
-        <button class="action-btn" id="btn1"></button>
-        <button class="action-btn" id="btn2"></button>
-        <button class="action-btn" id="btn3"></button>
-        <button class="action-btn" id="btn4"></button>
+        <button class="action-btn">الأوامر</button>
+        <button class="action-btn">التحديثات</button>
+        <button class="action-btn">حول الموقع</button>
+        <button class="action-btn">اتصل بنا</button>
       </div>
-      <a class="telegram-button" href="https://t.me/ka_killr" target="_blank">KA_KILLR</a>
+      <a href="https://t.me/KA_KILLR9" target="_blank" class="telegram-button">المطور الرسمي</a>
     </div>
-
-    <div id="footer-text"></div>
-  </div>
+  </main>
 
   <script>
-    const langSelectDiv = document.getElementById('language-select');
-    const mainSiteDiv = document.getElementById('main-site');
+    // استعادة اللغة من localStorage عند تحميل الصفحة
+    const langSelect = document.getElementById('language-select');
+    const mainSite = document.getElementById('main-site');
+    const buttons = document.querySelectorAll('.lang-btn');
 
-    const texts = {
-      en: {
-        buttons: [
-          "Delta | دلتا",
-          "Krnl | كارنل",
-          "Codex | كودكس",
-          "Arsious | ارسيوس"
-        ],
-        footer: "Welcome to KILLRS-Hacks! Here you can find your favorite Hacks easily and safely. Choose a section above to get started."
-      },
-      ar: {
-        buttons: [
-          "دلتا | Delta",
-          "كارنل | Krnl",
-          "كودكس | Codex",
-          "ارسيــوس | Arsious"
-        ],
-        footer: "مرحباً بك في KILLRS-Hacks! هنا يمكنك إيجاد هاكات المفضلة لديك بسهولة وأمان. اختر القسم أعلاه للبدء."
+    function showMainSite(lang) {
+      langSelect.style.display = 'none';
+      mainSite.style.display = 'flex';
+      // هنا ممكن تضيف تغيير نصوص حسب اللغة إذا تريد
+      // مثال (بسيط) للتجربة:
+      const siteName = document.getElementById('site-name');
+      switch (lang) {
+        case 'ar':
+          siteName.textContent = 'كييلرز سكريبتس';
+          break;
+        case 'en':
+          siteName.textContent = 'KILLRS-Scripts';
+          break;
+        case 'fr':
+          siteName.textContent = 'KILLRS-Scripts (FR)';
+          break;
+        case 'tr':
+          siteName.textContent = 'KILLRS-Scripts (TR)';
+          break;
+        default:
+          siteName.textContent = 'KILLRS-Scripts';
       }
-    };
+    }
 
-    document.querySelectorAll('.lang-btn').forEach(btn => {
+    // تفقد إذا كانت اللغة محفوظة من قبل
+    const savedLang = localStorage.getItem('selectedLang');
+    if (savedLang) {
+      showMainSite(savedLang);
+    }
+
+    // حدث الضغط على زر اللغة
+    buttons.forEach(btn => {
       btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
-        langSelectDiv.style.display = 'none';
-        mainSiteDiv.style.display = 'flex';
-
-        for(let i=1; i<=4; i++) {
-          document.getElementById('btn'+i).textContent = texts[lang].buttons[i-1];
-          document.getElementById('btn'+i).style.direction = lang === 'ar' ? 'rtl' : 'ltr';
-          document.getElementById('btn'+i).style.textAlign = 'center';
-        }
-
-        const footer = document.getElementById('footer-text');
-        footer.textContent = texts[lang].footer;
-        footer.style.direction = lang === 'ar' ? 'rtl' : 'ltr';
-        footer.style.textAlign = 'center';
-        footer.style.fontWeight = lang === 'ar' ? '600' : '500';
+        localStorage.setItem('selectedLang', lang);
+        showMainSite(lang);
       });
     });
   </script>
-
 </body>
 </html>
