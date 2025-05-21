@@ -8,8 +8,8 @@
     body {
       margin: 0;
       padding: 20px;
-      background-color: #fff;
-      color: #000;
+      background-color: #000; /* خلفية سوداء */
+      color: #fff;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
@@ -32,34 +32,20 @@
       font-size: 18px;
       transition: 0.2s ease;
       transform: scale(1);
+      box-shadow: 0 0 10px #fff; /* إضاءة بيضاء */
     }
 
     .button:hover {
-      background-color: #444;
+      background-color: #111;
     }
 
     .button:active {
       transform: scale(0.95);
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      margin-top: 30px;
-      font-size: 22px;
-    }
-
-    .certificate {
-      background-color: #f4f4f4;
-      padding: 12px;
-      border-radius: 10px;
-      margin: 8px 0;
-      text-align: center;
-      font-weight: bold;
+      color: #fff;
     }
   </style>
 </head>
@@ -68,25 +54,33 @@
   <div class="container">
     <h1>theghost</h1>
 
-    <!-- أزرار الأدوات مع روابط قابلة للتعديل -->
+    <!-- روابط الأدوات -->
     <!-- رابط دلتا -->
     <a href="https://example.com/delta" class="button">دلتا</a>
-    
+
     <!-- رابط فلكس -->
     <a href="https://example.com/flex" class="button">فلكس</a>
-    
+
     <!-- رابط كودكس -->
     <a href="https://example.com/codex" class="button">كودكس</a>
-    
+
     <!-- رابط ارسيوس -->
     <a href="https://example.com/arsius" class="button">ارسيوس</a>
 
-    <!-- قسم الشهادات -->
     <h2>الشهادات / الأدوات الأخرى</h2>
-    <div class="certificate">شهادة فورتنايت</div>
-    <div class="certificate">هاك روبلوكس</div>
-    <div class="certificate">بيسي</div>
-    <div class="certificate">DNS</div>
+
+    <!-- رابط شهادة فورتنايت -->
+    <a href="https://example.com/fortnite" class="button">شهادة فورتنايت</a>
+
+    <!-- رابط هاك روبلوكس -->
+    <a href="https://example.com/roblox" class="button">هاك روبلوكس</a>
+
+    <!-- رابط بيسي -->
+    <a href="https://example.com/pc" class="button">بيسي</a>
+
+    <!-- رابط DNS -->
+    <a href="https://example.com/dns" class="button">DNS</a>
+
   </div>
 
 </body>
