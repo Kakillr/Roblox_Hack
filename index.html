@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<link href="https://fonts.cdnfonts.com/css/vip-hala" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</title>
@@ -14,10 +13,11 @@
       margin: 0;
       animation: fadeIn 2s ease-out;
       text-align: center;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .container, .content-section {
@@ -40,27 +40,27 @@
       color: #ccc;
     }
 
-   .download-btn {
-  background-color: #ccc; /* رمادي فاتح */
-  color: black;
-  padding: 15px 30px;
-  font-size: 20px;
-  border-radius: 25px;
-  margin: 10px auto;
-  display: block;
-  width: fit-content;
-  transition: all 0.3s ease-in-out;
-  font-family: 'VIP Hala', sans-serif;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-}
+    .download-btn {
+      background-color: red;
+      color: white;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 25px;
+      margin: 10px auto;
+      display: block;
+      width: fit-content;
+      transition: all 0.3s ease-in-out;
+      font-family: 'VIP Hala', sans-serif;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+    }
 
-.download-btn:hover {
-  background-color: #eee;
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5) inset;
-  transform: scale(1.08);
-}
-
+    .download-btn:hover {
+      background-color: darkred;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5) inset;
+      transform: scale(1.08);
+    }
 
     .social-container {
       display: flex;
@@ -68,6 +68,7 @@
       gap: 15px;
       margin-top: 10px;
       flex-wrap: wrap;
+      flex-direction: row;
     }
 
     .social-btn {
@@ -80,53 +81,21 @@
       gap: 8px;
       text-decoration: none;
     }
+
     .social-btn img {
-  width: 20px;
-  height: 20px;
-}
-
-.lang-btn {
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  margin: 5px;
-  cursor: pointer;
-  font-size: 16px;
-} /* ← تم إغلاق القوس هنا بشكل صحيح */
-
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-
-    .feature-card {
-      background: #333;
-      padding: 20px;
-      border-radius: 10px;
+      width: 20px;
+      height: 20px;
     }
 
-    .faq-content {
-      text-align: right;
-    }
-
-    .faq-item {
-      background: #333;
-      padding: 10px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .faq-question {
-      font-weight: bold;
-    }
-
-    .faq-answer {
-      margin-top: 5px;
-      color: #ccc;
+    .lang-btn {
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      margin: 5px;
+      cursor: pointer;
+      font-size: 16px;
     }
   </style>
 </head>
@@ -141,109 +110,66 @@
   <div id="mainContent" style="display:none;">
     <div class="container">
       <h1 id="title">𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</h1>
-      <div class="description" id="desc">Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!</div>
-
-      <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-        <div class="download-btn" id="deltaBtn" onclick="installApp('https://deltaios-executor.com/Install1.plist')">Delta Install</div>
-        <div class="download-btn" id="codexBtn" onclick="installApp('https://codex-ios.com/Install.plist')">CODEX Install</div>
-        <div class="download-btn" id="krnlBtn" onclick="installApp('https://krnl-ios.com/Install1.plist')">KRNL Install</div>
+      <div class="description" id="desc">
+        Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!
       </div>
 
+      <!-- الزرين العلويين -->
+      <div class="container" id="buttonsTop">
+        <div class="download-btn" id="deltaBtn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist')">تثبيت Delta</div>
+
+        <div class="download-btn" id="codexBtn" onclick="installApp('https://codex-ios.com/Install.plist')">تثبيت CODEX</div>
+      </div>
+
+      <!-- الزر السفلي -->
+      <div class="container" id="buttonsBottom">
+        <div class="download-btn" id="krnlBtn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist')">تثبيت KRNL</div>
+      </div>
+
+      <!-- وسائل التواصل -->
       <div class="social-container">
-        <a class="social-btn" href="https://www.youtube.com/@Ka_KILLR" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/YouTube_social_white_square_%282017%29.svg"> YouTube
+        <p>تابعنا على وسائل التواصل الاجتماعي لمزيد من التطبيقات!</p>
+
+        <a href="https://t.me/ka_killr" class="social-btn" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> تيليجرام
         </a>
-        <a class="social-btn" href="https://t.me/KA_KILLR" target="_blank">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg"> Telegram
+
+        <a href="https://www.youtube.com/@Ka_KILLR" class="social-btn" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> يوتيوب
         </a>
       </div>
-
-      <button class="lang-btn" onclick="showLangSelect()">اللغة | Language</button>
     </div>
-
-    <section class="content-section">
-      <h2 id="whyTitle">لماذا تختار Delta iOS؟</h2>
-      <div class="features-grid">
-        <div class="feature-card"><h3 id="f1t">تثبيت آمن</h3><p id="f1d">نستخدم تقنيات تشفير لضمان تثبيت آمن.</p></div>
-        <div class="feature-card"><h3 id="f2t">تحديثات منتظمة</h3><p id="f2d">ابقَ على اطلاع مع تحديثات مستمرة.</p></div>
-        <div class="feature-card"><h3 id="f3t">توافق واسع</h3><p id="f3d">دعم لأنظمة متعددة لتجربة سلسة.</p></div>
-        <div class="feature-card"><h3 id="f4t">سرعة تحميل عالية</h3><p id="f4d">سيرفراتنا محسنة لتحميل سريع.</p></div>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <h2 id="faqTitle">الأسئلة الشائعة</h2>
-      <div class="faq-content">
-        <div class="faq-item">
-          <div class="faq-question" id="q1">هل Delta iOS آمن؟</div>
-          <div class="faq-answer" id="a1">نعم، Delta iOS يهتم بأمان وخصوصية المستخدم.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" id="q2">ما الإصدارات المدعومة؟</div>
-          <div class="faq-answer" id="a2">يدعم iOS 12.0 فما فوق.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question" id="q3">كم مرة يتم التحديث؟</div>
-          <div class="faq-answer" id="a3">يتم التحديث باستمرار لضمان أحدث الميزات.</div>
-        </div>
-      </div>
-    </section>
   </div>
 
- <script>
-    const translations = {
-      ar: {
-        title: "𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑",
-        desc: "Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!",
-        whyTitle: "لماذا تختار Delta iOS؟",
-        faqTitle: "الأسئلة الشائعة",
-        f1t: "تثبيت آمن", f1d: "نستخدم تقنيات تشفير لضمان تثبيت آمن.",
-        f2t: "تحديثات منتظمة", f2d: "ابقَ على اطلاع مع تحديثات مستمرة.",
-        f3t: "توافق واسع", f3d: "دعم لأنظمة متعددة لتجربة سلسة.",
-        f4t: "سرعة تحميل عالية", f4d: "سيرفراتنا محسنة لتحميل سريع.",
-        q1: "هل Delta iOS آمن؟", a1: "نعم، Delta iOS يهتم بأمان وخصوصية المستخدم.",
-        q2: "ما الإصدارات المدعومة؟", a2: "يدعم iOS 12.0 فما فوق.",
-        q3: "كم مرة يتم التحديث؟", a3: "يتم التحديث باستمرار لضمان أحدث الميزات.",
-        deltaBtn: "دلتا | iOS",
-        codexBtn: "كودكس | iOS",
-        krnlBtn: "كارنل | iOS"
-      },
-      en: {
-        title: "𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑",
-        desc: "Delta Executor is one of the most popular Roblox exploit tools. Download v2.0 for iOS without a computer!",
-        whyTitle: "Why Choose Delta iOS?",
-        faqTitle: "Frequently Asked Questions",
-        f1t: "Secure Installation", f1d: "We use encryption for safe installs.",
-        f2t: "Regular Updates", f2d: "Stay updated with continuous improvements.",
-        f3t: "Wide Compatibility", f3d: "Supports many iOS systems smoothly.",
-        f4t: "Fast Downloads", f4d: "Our servers are optimized for speed.",
-        q1: "Is Delta iOS safe?", a1: "Yes, Delta iOS prioritizes security.",
-        q2: "Which iOS versions are supported?", a2: "Supports iOS 12.0 and above.",
-        q3: "How often is the app updated?", a3: "We update constantly with new features.",
-        deltaBtn: "Delta | iOS",
-        codexBtn: "CODEX | iOS",
-        krnlBtn: "KRNL | iOS"
-      }
-    };
-
+  <script>
     function setLanguage(lang) {
-      document.getElementById("langSelect").style.display = "none";
-      document.getElementById("mainContent").style.display = "block";
-      const t = translations[lang];
-      for (const key in t) {
-        const el = document.getElementById(key);
-        if (el) el.textContent = t[key];
+      document.getElementById('langSelect').style.display = 'none';
+      document.getElementById('mainContent').style.display = 'block';
+
+      if (lang === 'en') {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+
+        document.getElementById('title').textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑';
+        document.getElementById('desc').textContent = 'Delta Executor is one of the most popular Roblox exploits. Download version 2.0 now for iOS without a computer!';
+
+        document.getElementById('deltaBtn').textContent = 'Direct Delta';
+        document.getElementById('codexBtn').textContent = 'Direct CODEX';
+        document.getElementById('krnlBtn').textContent = 'Direct KRNL';
+      } else {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+
+        document.getElementById('title').textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑';
+        document.getElementById('desc').textContent = 'Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!';
+
+        document.getElementById('deltaBtn').textContent = 'تثبيت Delta';
+        document.getElementById('codexBtn').textContent = 'تثبيت CODEX';
+        document.getElementById('krnlBtn').textContent = 'تثبيت KRNL';
       }
-      document.body.dir = lang === "ar" ? "rtl" : "ltr";
     }
 
-    function showLangSelect() {
-      document.getElementById("langSelect").style.display = "block";
-      document.getElementById("mainContent").style.display = "none";
-    }
-
-    function installApp(plistUrl) {
-      const url = `itms-services://?action=download-manifest&url=${encodeURIComponent(plistUrl)}`;
+    function installApp(url) {
       window.location.href = url;
     }
   </script>
