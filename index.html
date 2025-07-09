@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</title>
+  <title>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑 - MultiLang</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet"/>
   <style>
     body {
-      background-color: black;
-      color: white;
+      background-color: #111;
+      color: #ddd;
       font-family: 'Cairo', sans-serif;
       margin: 0;
-      animation: fadeIn 2s ease-out;
+      animation: fadeIn 1.5s ease-out;
       text-align: center;
     }
 
@@ -20,45 +20,66 @@
       to { opacity: 1; }
     }
 
-    .container, .content-section {
-      background-color: #222;
+    .container {
+      background-color: #1a1a1a;
       padding: 30px;
-      margin: 20px auto;
-      border-radius: 15px;
+      margin: 30px auto;
+      border-radius: 20px;
       width: 90%;
-      max-width: 900px;
+      max-width: 800px;
+      box-shadow: 0 0 25px rgba(150,150,150,0.2);
     }
 
     h1 {
-      font-size: 60px;
+      font-size: 50px;
       margin-bottom: 20px;
+      color: #eee;
     }
 
-    .description {
+    .lang-btn {
+      background-color: #000;
+      color: #f0e5d8; /* حليبي */
+      padding: 12px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 15px;
       font-size: 18px;
-      margin-bottom: 30px;
-      color: #ccc;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(192,192,192,0.3);
+      transition: all 0.3s ease;
     }
 
-    .download-btn {
-      background-color: red;
-      color: white;
+    .lang-btn:hover {
+      box-shadow: 0 0 30px rgba(192,192,192,0.5);
+      transform: scale(1.05);
+    }
+
+    .button-box {
+      background-color: #1c1c1c;
+      border-radius: 20px;
+      padding: 30px 15px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hack-btn {
+      background-color: #000;
+      color: #f0e5d8;
       padding: 15px 30px;
       font-size: 20px;
-      border-radius: 25px;
-      margin: 10px auto;
-      display: block;
-      width: fit-content;
-      transition: all 0.3s ease-in-out;
-      font-family: 'VIP Hala', sans-serif;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.2) inset;
-      text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(192,192,192,0.3);
       cursor: pointer;
+      transition: all 0.3s ease;
+      width: fit-content;
+      margin: 0 auto;
     }
 
-    .download-btn:hover {
-      background-color: darkred;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.5) inset;
+    .hack-btn:hover {
+      box-shadow: 0 0 25px rgba(192,192,192,0.6);
       transform: scale(1.08);
     }
 
@@ -66,13 +87,20 @@
       display: flex;
       justify-content: center;
       gap: 15px;
-      margin-top: 10px;
+      margin-top: 25px;
       flex-wrap: wrap;
       flex-direction: row;
     }
 
+    .social-container p {
+      width: 100%;
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+
     .social-btn {
-      background-color: #444;
+      background-color: #222;
       color: white;
       padding: 10px 20px;
       border-radius: 10px;
@@ -80,55 +108,38 @@
       align-items: center;
       gap: 8px;
       text-decoration: none;
+      box-shadow: 0 0 10px rgba(100,100,100,0.2);
     }
 
     .social-btn img {
       width: 20px;
       height: 20px;
     }
-
-    .lang-btn {
-      background-color: red;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      margin: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
   </style>
 </head>
 <body>
-  <div id="langSelect" class="container">
-    <h1>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</h1>
-    <p>Choose your language - اختر لغتك</p>
+
+  <div id="languageSelector" class="container">
+    <h1>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑</h1>
+    <p>اختر لغتك - Choose your language - 选择你的语言</p>
     <button class="lang-btn" onclick="setLanguage('ar')">العربية</button>
     <button class="lang-btn" onclick="setLanguage('en')">English</button>
+    <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
   </div>
 
   <div id="mainContent" style="display:none;">
     <div class="container">
-      <h1 id="title">𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑</h1>
-      <div class="description" id="desc">
-        Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!
+      <h1 id="mainTitle">𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑</h1>
+      <p id="mainDesc">اختر أداتك المفضلة من بين أفضل أدوات استغلال Roblox.</p>
+
+      <div class="button-box">
+        <button class="hack-btn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist')">Delta</button>
+        <button class="hack-btn" onclick="installApp('https://krnl-ios.com/Install2.plist')">KRNL</button>
+        <button class="hack-btn" onclick="installApp('https://codex-ios.com/Install.plist')">CODEX</button>
       </div>
 
-      <!-- الزرين العلويين -->
-      <div class="container" id="buttonsTop">
-        <div class="download-btn" id="deltaBtn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist')">تثبيت Delta</div>
-
-        <div class="download-btn" id="codexBtn" onclick="installApp('https://codex-ios.com/Install.plist')">تثبيت CODEX</div>
-      </div>
-
-      <!-- الزر السفلي -->
-      <div class="container" id="buttonsBottom">
-        <div class="download-btn" id="krnlBtn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https://krnl-ios.com/Install2.plist')">تثبيت KRNL</div>
-      </div>
-
-      <!-- وسائل التواصل -->
       <div class="social-container">
-        <p>تابعنا على وسائل التواصل الاجتماعي لمزيد من التطبيقات!</p>
+        <p id="socialText">تابعنا على وسائل التواصل الاجتماعي لمزيد من التطبيقات!</p>
 
         <a href="https://t.me/ka_killr" class="social-btn" target="_blank">
           <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> تيليجرام
@@ -143,29 +154,31 @@
 
   <script>
     function setLanguage(lang) {
-      document.getElementById('langSelect').style.display = 'none';
+      document.getElementById('languageSelector').style.display = 'none';
       document.getElementById('mainContent').style.display = 'block';
+
+      let title = document.getElementById('mainTitle');
+      let desc = document.getElementById('mainDesc');
+      let socialText = document.getElementById('socialText');
 
       if (lang === 'en') {
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
-
-        document.getElementById('title').textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑';
-        document.getElementById('desc').textContent = 'Delta Executor is one of the most popular Roblox exploits. Download version 2.0 now for iOS without a computer!';
-
-        document.getElementById('deltaBtn').textContent = 'Direct Delta';
-        document.getElementById('codexBtn').textContent = 'Direct CODEX';
-        document.getElementById('krnlBtn').textContent = 'Direct KRNL';
+        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
+        desc.textContent = 'Choose your favorite Roblox exploit tool below.';
+        socialText.textContent = 'Follow us on social media for more tools!';
+      } else if (lang === 'zh') {
+        document.documentElement.lang = 'zh';
+        document.documentElement.dir = 'ltr';
+        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
+        desc.textContent = '选择您喜欢的Roblox辅助工具。';
+        socialText.textContent = '关注我们的社交媒体以获取更多工具！';
       } else {
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
-
-        document.getElementById('title').textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝑳𝑳𝐑';
-        document.getElementById('desc').textContent = 'Delta Executor هو واحد من أشهر أدوات استغلال Roblox. حمل الإصدار 2.0 الآن لأجهزة iOS بدون الحاجة إلى كمبيوتر!';
-
-        document.getElementById('deltaBtn').textContent = 'تثبيت Delta';
-        document.getElementById('codexBtn').textContent = 'تثبيت CODEX';
-        document.getElementById('krnlBtn').textContent = 'تثبيت KRNL';
+        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
+        desc.textContent = 'اختر أداتك المفضلة من بين أفضل أدوات استغلال Roblox.';
+        socialText.textContent = 'تابعنا على وسائل التواصل الاجتماعي لمزيد من التطبيقات!';
       }
     }
 
@@ -173,5 +186,6 @@
       window.location.href = url;
     }
   </script>
+
 </body>
 </html>
