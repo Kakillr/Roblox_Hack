@@ -25,21 +25,30 @@
 
 h1 {
   font-size: 42px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   color: #e4dfd4; /* لون حليبي */
   text-shadow: none;
 }
 
+.logo {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  object-fit: cover;
+}
+
 .button-box {
-  background: linear-gradient(135deg, #2b2b2b, #444);
+  background-color: #000;
   border-radius: 20px;
-  padding: 20px;
+  padding: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), 0 0 30px rgba(0, 255, 255, 0.1);
   max-width: 95vw;
 }
 
@@ -71,7 +80,8 @@ h1 {
 
   </style>
 </head>
-<body>  <h1>Ghost_KILLR</h1>  <div class="button-box">
+<body>  <img src="https://via.placeholder.com/90x90.png?text=Logo" alt="شعار" class="logo">
+  <h1>Ghost_KILLR</h1>  <div class="button-box">
     <button class="lang-btn" onclick="location.href='https://kakillr.github.io/KILLRS_Hacks/'">أندرويد | Android</button>
     <button class="lang-btn" onclick="location.href='https://kakillr.github.io/Delta_Ghost/'">ايفون | iPhone</button>
   </div></body>
