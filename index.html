@@ -1,193 +1,89 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑 - MultiLang</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ghost_KILLR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
-      color: #ddd;
-      font-family: 'Cairo', sans-serif;
       margin: 0;
-      animation: fadeIn 1.5s ease-out;
-      text-align: center;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    .container {
-      background-color: #1a1a1a;
-      padding: 30px;
-      margin: 30px auto;
-      border-radius: 20px;
-      width: 90%;
-      max-width: 800px;
-      box-shadow: 0 0 25px rgba(150,150,150,0.2);
+      height: 100vh;
+      background: linear-gradient(135deg, #121212, #1f1f1f);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Play', sans-serif;
+      overflow: hidden;
+      animation: bgFade 3s ease-in-out forwards;
     }
 
     h1 {
-      font-size: 50px;
-      margin-bottom: 20px;
-      color: #eee;
-    }
-
-    .lang-btn {
-      background-color: #000;
-      color: #f0e5d8; /* حليبي */
-      padding: 12px 25px;
-      margin: 10px;
-      border: none;
-      border-radius: 15px;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 0 15px rgba(192,192,192,0.3);
-      transition: all 0.3s ease;
-    }
-
-    .lang-btn:hover {
-      box-shadow: 0 0 30px rgba(192,192,192,0.5);
-      transform: scale(1.05);
-    }
-
-    .button-box {
-      background-color: #1c1c1c;
-      border-radius: 20px;
-      padding: 30px 15px;
-      margin: 20px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .hack-btn {
-      background-color: #000;
-      color: #f0e5d8;
-      padding: 15px 30px;
-      font-size: 20px;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0 0 12px rgba(192,192,192,0.3);
-      cursor: pointer;
-      transition: all 0.3s ease;
-      width: fit-content;
-      margin: 0 auto;
-    }
-
-    .hack-btn:hover {
-      box-shadow: 0 0 25px rgba(192,192,192,0.6);
-      transform: scale(1.08);
-    }
-
-    .social-container {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 25px;
-      flex-wrap: wrap;
-      flex-direction: row;
-    }
-
-    .social-container p {
-      width: 100%;
-      font-size: 18px;
-      color: #ccc;
-      margin-bottom: 10px;
-    }
-
-    .social-btn {
-      background-color: #222;
+      font-size: 60px;
       color: white;
-      padding: 10px 20px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(100,100,100,0.2);
+      text-shadow: 0 0 15px #ff0000, 0 0 30px #ff5500, 0 0 45px #ff7700;
+      margin-bottom: 60px;
+      animation: fadeInDown 1s ease-out;
     }
 
-    .social-btn img {
-      width: 20px;
-      height: 20px;
+    .button-container {
+      display: flex;
+      gap: 40px;
+      animation: fadeInUp 1.5s ease-out;
+    }
+
+    .glow-button {
+      padding: 20px 45px;
+      background: rgba(255, 255, 255, 0.15);
+      border: 2px solid black;
+      border-radius: 20px;
+      color: black;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.3s ease-in-out;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 10px #000000aa;
+      text-shadow: 0 0 4px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    .glow-button:hover {
+      box-shadow: 0 0 25px #00ffcc, 0 0 40px #00ffccaa;
+      transform: scale(1.08);
+      animation: none;
+    }
+
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px #00ffcc44; }
+      50% { box-shadow: 0 0 25px #00ffccaa; }
+      100% { box-shadow: 0 0 10px #00ffcc44; }
+    }
+
+    @keyframes bgFade {
+      0% { background: #000; }
+      100% { background: linear-gradient(135deg, #121212, #1f1f1f); }
     }
   </style>
 </head>
 <body>
 
-  <div id="languageSelector" class="container">
-    <h1>𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑</h1>
-    <p>اختر لغتك - Choose your language - 选择你的语言</p>
-    <button class="lang-btn" onclick="setLanguage('ar')">العربية</button>
-    <button class="lang-btn" onclick="setLanguage('en')">English</button>
-    <button class="lang-btn" onclick="setLanguage('zh')">中文</button>
+  <h1>Ghost_KILLR</h1>
+
+  <div class="button-container">
+    <button class="glow-button" onclick="location.href='https://kakillr.github.io/KILLRS_Hacks/'">أندرويد | Android</button>
+    <button class="glow-button" onclick="location.href='https://kakillr.github.io/Delta_Ghost/'">ايفون | iPhone</button>
   </div>
-
-  <div id="mainContent" style="display:none;">
-    <div class="container">
-      <h1 id="mainTitle">𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑</h1>
-      <p id="mainDesc">اختار احسن هاك برأيك ولا تنسى تشترك بقناة اليوتيوب</p>
-
-<div class="button-box">
-  <button class="hack-btn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fdeltaios-executor.com%2FInstall2.plist')">Delta</button>
-
-  <button class="hack-btn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fkrnl-ios.com%2FInstall2.plist')">KRNL</button>
-
-  <button class="hack-btn" onclick="installApp('itms-services://?action=download-manifest&amp;url=https%3A%2F%2Fcodex-ios.com%2FInstall.plist')">CODEX</button>
-</div>
-
-
-      <div class="social-container">
-        <p id="socialText">تابعنا على قنواتنا!</p>
-        <a href="https://t.me/ka_killr" class="social-btn" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram"> تيليجرام
-        </a>
-
-        <a href="https://www.youtube.com/@Ka_KILLR" class="social-btn" target="_blank">
-          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"> يوتيوب
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    function setLanguage(lang) {
-      document.getElementById('languageSelector').style.display = 'none';
-      document.getElementById('mainContent').style.display = 'block';
-
-      let title = document.getElementById('mainTitle');
-      let desc = document.getElementById('mainDesc');
-      let socialText = document.getElementById('socialText');
-
-      if (lang === 'en') {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
-        desc.textContent = 'Choose your favorite Roblox exploit tool below.';
-        socialText.textContent = 'Follow us on social media for more tools!';
-      } else if (lang === 'zh') {
-        document.documentElement.lang = 'zh';
-        document.documentElement.dir = 'ltr';
-        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
-        desc.textContent = '选择您喜欢的Roblox辅助工具。';
-        socialText.textContent = '关注我们的社交媒体以获取更多工具！';
-      } else {
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        title.textContent = '𝐆𝐇𝐎𝐒𝐓 𝐊𝐈𝐋𝐋𝐑';
-        desc.textContent = 'اختار احسن هاك برأيك ولا تنسى تشترك بقناة اليوتيوب';
-        socialText.textContent = 'تابعنا على وسائل التواصل الاجتماعي لمزيد من التطبيقات!';
-      }
-    }
-
-    function installApp(url) {
-      window.location.href = url;
-    }
-  </script>
 
 </body>
 </html>
