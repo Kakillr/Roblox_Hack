@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="ar" dir="rtl">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -12,77 +13,71 @@
       margin: 0;
       animation: fadeIn 1.5s ease-out;
       text-align: center;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px 20px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 40px;
+      color: #e4dfd4; /* لون حليبي */
+      text-shadow: none;
+    }
+
+    .button-box {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
-      padding: 20px;
-    }@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+      max-width: 95vw;
+    }
 
-h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
-  color: #e4dfd4; /* لون حليبي */
-  text-shadow: none;
-}
+    .lang-btn {
+      background: #2d2d2d;
+      color: #f0e5d8;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(200,200,200,0.2);
+    }
 
-.logo {
-  width: 90px;
-  height: 90px;
-  margin-bottom: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-  object-fit: cover;
-}
+    .lang-btn:hover {
+      box-shadow: 0 0 25px rgba(200,200,200,0.4);
+      transform: scale(1.05);
+    }
 
-.button-box {
-  background-color: #000;
-  border-radius: 20px;
-  padding: 25px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.15), 0 0 30px rgba(0, 255, 255, 0.1);
-  max-width: 95vw;
-}
-
-.lang-btn {
-  background: linear-gradient(135deg, #444, #888);
-  color: #f0e5d8;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  min-width: 120px;
-  text-align: center;
-}
-
-.lang-btn:hover {
-  background: linear-gradient(135deg, #555, #999);
-  transform: scale(1.05);
-}
-
-@media (max-width: 600px) {
-  .lang-btn {
-    font-size: 14px;
-    padding: 10px 20px;
-    min-width: 100px;
-  }
-}
-
+    @media (max-width: 600px) {
+      .lang-btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        min-width: 100px;
+      }
+    }
   </style>
 </head>
-<body>  <img src="https://via.placeholder.com/90x90.png?text=Logo" alt="شعار" class="logo">
-  <h1>Ghost_KILLR</h1>  <div class="button-box">
+<body>
+
+  <h1>Ghost_KILLR</h1>
+
+  <div class="button-box">
     <button class="lang-btn" onclick="location.href='https://kakillr.github.io/KILLRS_Hacks/'">أندرويد | Android</button>
     <button class="lang-btn" onclick="location.href='https://kakillr.github.io/Delta_Ghost/'">ايفون | iPhone</button>
-  </div></body>
+  </div>
+
+</body>
 </html>
