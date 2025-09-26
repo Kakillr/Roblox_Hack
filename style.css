@@ -1,0 +1,431 @@
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap);
+
+/* الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .landing-page .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  .landing-page .text1 {
+    max-width: 100%;
+  }
+  .landing-page .img-2 img {
+    width: 100%;
+    max-width: 250px;
+  }
+  .search {
+    flex-direction: column;
+  }
+  .wide-btn, .wide-search {
+    width: 100%;
+  }
+}
+
+/* الشاشات عالية الدقة */
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+       only screen and (min--moz-device-pixel-ratio: 2),
+       only screen and (-o-min-device-pixel-ratio: 2/1),
+       only screen and (min-device-pixel-ratio: 2),
+       only screen and (min-resolution: 192dpi),
+       only screen and (min-resolution: 2dppx) {
+  .logo-img-1x { display: none; }
+  .logo-img-2x { display: inline-block; }
+}
+
+* {
+  scroll-behavior: smooth;
+  margin: auto;
+  padding: auto;
+}
+
+body {
+  background-color: black;
+  color: #ddd;
+  font-family: 'Cairo', sans-serif;
+  margin: 0;
+  animation: fadeIn 1.5s ease-out;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.logo {
+  width: 50px;
+  border: none;
+  border-radius: 15px;
+}
+
+hr { opacity: 10%; }
+
+/* روابط الهيدر */
+.header-links a {
+  color: #ddd;
+  padding: 7px 15px;
+  text-decoration: none;
+}
+
+.landing-page .content {
+  background-color: #1a1a1a;
+  padding: 30px;
+  margin: 30px auto;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 0 25px rgba(150,150,150,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.landing-page .text1 {
+  flex: 1;
+  max-width: 60%;
+  font-weight: bold;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.landing-page .img-2 img {
+  width: 200px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.hack-btn {
+  background-color: #000;
+  color: #3a3a3a;
+  font-size: 15px;
+  border: none;
+  border-radius: 22px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100px;
+  text-align: center;
+  padding: 7px 15px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* دائرة التوهج */
+.hack-btn::before {
+  content: "";
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: width 0.4s, height 0.4s, opacity 0.4s;
+}
+
+.hack-btn:hover::before {
+  width: 70px;
+  height: 70px;
+  opacity: 1;
+}
+
+.hack-btn:hover {
+  transform: scale(1.05);
+  color: white;
+}
+
+.wide-btn { width: 340px; }
+
+.btn {
+  background-color: #000;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.btn:hover {
+  box-shadow: 0 0 30px rgba(192,192,192,0.5);
+  transform: scale(1.05);
+}
+
+.delta-section {
+  margin: 0;
+  padding: 40px 20px;
+  background-color: black;
+  color: #ddd;
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.delta-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.delta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.delta-card {
+  background: #111;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 10px #0ff4;
+  text-align: left;
+  transition: transform 0.3s;
+}
+.delta-card:hover { transform: scale(1.05); }
+
+.delta-content h3 {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+  color: #0ff;
+}
+
+.delta-content p {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.delta-link {
+  color: #1e90ff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.delta-link svg { fill: currentColor; }
+
+.About {
+  color: #ddd;
+  padding: 7px 15px;
+  text-decoration: none;
+}
+
+.img-2 {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: .3s ease;
+}
+.img-2:hover { scale: 1.05; }
+
+.card {
+  background: black;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  max-width: 95%;
+  text-align: center;
+}
+
+#content { transition: opacity .3s; }
+#ios-panel { display: none; flex-direction: column; gap: 10px; }
+#android-panel { display: none; flex-direction: column; }
+
+.link-btn {
+  display: block;
+  text-decoration: none;
+  background: rgba(25,25,25,0.1);
+  padding: 12px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: 0.4s;
+  color: #3a3a3a;
+}
+.link-btn:hover {
+  transform: scale(1.05);
+  color: #0ff;
+}
+.link-btn:active { transform: translate(2px, 2px); }
+
+.landing-page { padding: 50px; }
+
+.content-wrapper {
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.text1 { flex: 1; }
+.img-2 img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+#Ghost_KILLR, #Executors, #Why { color: #0ff; }
+#iPhone { color: #A2AAAD; }
+#Android { color: #3DDC84; }
+
+    /* زر hack */
+    #openPopup {
+      background-color: #000;
+      color: #3a3a3a;
+      font-size: 15px;
+      border: none;
+      border-radius: 22px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100px;
+      text-align: center;
+      padding: 7px 15px;
+      overflow: hidden;
+      position: relative;
+    }
+    #openPopup:hover {
+      box-shadow: 0 0 25px rgba(192,192,192,0.6);
+      transform: scale(1.08);
+      color: white;
+    }
+
+    /* Popup */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .popup-content {
+      background: #000000;
+      padding: 30px 20px;
+      border-radius: 15px;
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      box-shadow: 0 0 20px cyan;
+      position: relative;
+    }
+
+    /* زر الإغلاق */
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 24px;
+      color: red;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* أزرار Popup */
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 100%;
+      align-items: center;
+    }
+
+
+/* زرّات الروابط (مصممة كـ anchors لكي تفتح روابط) */
+.btn-container { display: flex; flex-direction: column; gap: 12px; margin-top: 8px; }
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #000;
+  font-weight: 600;
+  transition: transform .18s, opacity .18s;
+}
+.btn-link:hover { transform: translateY(-3px); opacity: .9; }
+
+/* لو تبي تلوين حسب نوع الزر */
+.btn-link.tele { background: #0088cc; }   /* تليجرام أزرق */
+.btn-link.yt   { background: #c4302b; }   /* يوتيوب أحمر */
+.btn-link.android { background: #3ddc84; color: #000; }
+.btn-link.ios  { background: #111; border: 1px solid #fff; }
+
+
+/* زر تلجرام متحرك */
+.tele {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 45px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.199);
+  background-color: black;
+}
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign svg { width: 25px; }
+.sign svg path { fill: white; }
+.text {
+  position: absolute;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+.tele:hover .text {
+  opacity: 1;
+  right: 10%;
+  width: 70%;
+  padding-right: 10px;
+}
+.tele:hover {
+  background-color: #3a3a3a;
+  width: 150px;
+  border-radius: 40px;
+}
+.tele:hover .sign {
+  width: 30%;
+  padding-left: 10px;
+}
+.tele:active { transform: translate(2px, 2px); }
