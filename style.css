@@ -152,7 +152,6 @@ hr { opacity: 10%; }
 
 .hack-btn:hover {
   transform: scale(1.05);
-  color: white;
 }
 
 .wide-btn { width: 340px; }
@@ -429,4 +428,5 @@ hr { opacity: 10%; }
   padding-left: 10px;
 }
 .tele:active { transform: translate(2px, 2px); }
+
 
